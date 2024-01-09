@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.linkBG{
+    @apply bg-gradient-to-r from-zinc-950 to-zinc-700
+}
