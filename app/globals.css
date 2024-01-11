@@ -6,3 +6,12 @@
 .linkBG{
     @apply bg-gradient-to-r from-zinc-950 to-zinc-700
 }
+
+.lodingClass{
+    animation: lodingAnimate 2s infinite linear;
+}
+
+@keyframes lodingAnimate {
+    0%{rotate: z 0deg;}
+    100%{rotate: z 360deg;}
+}

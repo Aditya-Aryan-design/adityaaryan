@@ -1,6 +1,7 @@
 import NavLinks from "./NavLinks"
 import { motion } from "framer-motion"
 import { Dispatch, SetStateAction } from "react";
+import { usePathname } from "next/navigation";
 
 interface IProps {
   showNav: boolean;
@@ -23,6 +24,9 @@ const variants = {
   }
 
 const Routers = ({showNav,setShowNav}:IProps) => {
+
+  const pathname = usePathname();
+
   return (
     <motion.div
     initial={{ opacity: 0, y: '-40vmax' }}
@@ -31,11 +35,16 @@ const Routers = ({showNav,setShowNav}:IProps) => {
     whileHover={{ scale: 1.2 }}
     whileTap={{ scale: 1.1 }}
     
-     className="absolute right-0 top-[11vmin] flex flex-col text-center linkBG">
+     className="absolute right-0 top-[14vmin] flex flex-col text-center linkBG">
       
       {
         navLinks.map((e,i)=>{
-            return <NavLinks key={i} title={e.title} link={e.link}/>
+            return <NavLinks
+              key={i} title={e.title}
+              link={e.link}
+              active={pathname === e.link?true:false}
+              setShowNav={setShowNav}
+              />
         })
       }
 
