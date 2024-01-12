@@ -1,11 +1,25 @@
+import {useRef} from "react";
+import { useFrame } from "@react-three/fiber";
+import { Mesh } from "three";
 
 
+const MyMesh=({i,j}:{i:number,j:number})=>{
 
-const Mesh=()=>{
+    const myMesh = useRef<Mesh | null>(null);
+    useFrame(()=>{
+        if(myMesh.current){
+
+            myMesh.current.rotation.x +=0.01
+        }
+
+    })
+    
     return(
         <mesh
-        position={[Math.random()*7-3.5, Math.random()*3-1.5, Math.random()*4-2]}
-        rotation={[Math.random(), Math.random()*-1, Math.random()]}
+        ref={myMesh}
+        position={[i,j,0]}
+        rotation={[i,j,j]}
+        scale={2}
         >
             <cylinderGeometry args={[0.05,0.05,0.1]}/>
             <meshStandardMaterial />
@@ -13,12 +27,13 @@ const Mesh=()=>{
     )
 }
 
-const Meshes = ({count}:{count:number})=>{
+const Meshes = ()=>{
 
     
     const components = [];
-    for(let i=0; i<count; i++){
-        components.push(<Mesh key={i}/>)
+    for(let i=-3; i<3; i+=0.4){
+        for(let j=-1.5; j<1.5; j+=0.4)
+            components.push(<MyMesh key={`${i}${j}`} i={i} j={j}/>)
     }
 
     return <>

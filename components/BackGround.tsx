@@ -2,7 +2,7 @@
 import { Canvas } from "@react-three/fiber"
 import { useAppSelector } from "@/redux/hooks"
 import Meshes from "./Meshes"
-import { memo } from "react"
+
 
 
 
@@ -13,11 +13,11 @@ function BackGround() {
 
 
     return (
-        <div className="absolute h-full w-full -z-50">
+        <div className="absolute h-full w-full -z-50 opacity-75">
             <Canvas
                 camera={{
                     far: 100,
-                    fov:50,
+                    fov:40,
                     position:[0,0,4]
                 }}
                 
@@ -25,13 +25,14 @@ function BackGround() {
                 <directionalLight
                     color={color}
                     position={[0, -1, 0.5]}
+                    intensity={0.7}
                 />
 
                 <ambientLight
-                    intensity={0.2}
+                    intensity={0.05}
                 />
 
-                        <Meshes count={200}/>
+                        <Meshes />
             
 
 
@@ -41,4 +42,4 @@ function BackGround() {
     )
 }
 
-export default memo(BackGround)
+export default BackGround
