@@ -19,8 +19,8 @@ const navLinks = [
 
 // animation constant
 const variants = {
-    open: { opacity: 1, y: 0 },
-    closed: { opacity: 0, y: '-40vmax' },
+    open: { y: 0 },
+    closed: { y: '-150%' },
   }
 
 const Routers = ({showNav,setShowNav}:IProps) => {
@@ -29,7 +29,7 @@ const Routers = ({showNav,setShowNav}:IProps) => {
 
   return (
     <motion.div
-    initial={{ opacity: 0, y: '-40vmax' }}
+    initial={{ y: '-150%' }}
     animate={showNav?'open':'closed'}
     variants={variants}
     whileHover={{ scale: 1.2 }}

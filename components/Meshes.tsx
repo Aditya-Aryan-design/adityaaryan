@@ -1,4 +1,4 @@
-import { ConeGeometry } from "three";
+
 
 
 const Mesh=()=>{
@@ -15,9 +15,10 @@ const Mesh=()=>{
 
 const Meshes = ({count}:{count:number})=>{
 
+    
     const components = [];
     for(let i=0; i<count; i++){
-        components.push(<Mesh/>)
+        components.push(<Mesh key={i}/>)
     }
 
     return <>

@@ -2,6 +2,7 @@
 import { Canvas } from "@react-three/fiber"
 import { useAppSelector } from "@/redux/hooks"
 import Meshes from "./Meshes"
+import { memo } from "react"
 
 
 
@@ -40,4 +41,4 @@ function BackGround() {
     )
 }
 
-export default BackGround
+export default memo(BackGround)

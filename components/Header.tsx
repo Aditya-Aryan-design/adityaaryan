@@ -13,7 +13,7 @@ export function Header() {
   const dispatch = useAppDispatch()
 
   useEffect(()=>{
-    dispatch(colorChanger())
+    dispatch(colorChanger()) 
     
   },[])
 
