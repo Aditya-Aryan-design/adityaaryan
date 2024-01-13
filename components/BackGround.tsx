@@ -10,10 +10,11 @@ import Meshes from "./Meshes"
 function BackGround() {
 
     const color = useAppSelector((state) => state.theme.value);
+    const bg = useAppSelector((state) => state.bg.value);
 
 
-    return (
-        <div className="absolute h-full w-full -z-50 opacity-75">
+    return bg?(
+        <div className="absolute h-full w-full -z-50 opacity-50">
             <Canvas
                 camera={{
                     far: 100,
@@ -22,24 +23,26 @@ function BackGround() {
                 }}
                 
             >
-                <directionalLight
-                    color={color}
-                    position={[0, -1, 0.5]}
-                    intensity={0.7}
-                />
+                
 
                 <ambientLight
                     intensity={0.05}
                 />
 
+                    <group>
+                    <directionalLight
+                    color={`rgb(${color})`}
+                    position={[0, 0, 0.5]}
+                    intensity={0.3}
+                />
                         <Meshes />
-            
+                    </group>
 
 
 
             </Canvas>
         </div>
-    )
+    ):<></>
 }
 
 export default BackGround

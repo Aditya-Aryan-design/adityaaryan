@@ -22,10 +22,10 @@ const [showNav, setShowNav] = useState(false)
 
 
   return (
-    <header className='flex justify-between px-[3vmin] py-[2vmin] border-b-[0.1vmin] text-[4.5vmin] sm:text-[4vmin] md:text-[3.5vmin] z-50' style={{borderColor:theme, boxShadow:`0 0 2vmin 0.2vmin ${theme}`}}>
+    <header className='flex justify-between px-[3vmin] py-[2vmin] border-b-[0.1vmin] text-[4.5vmin] sm:text-[4vmin] md:text-[3.5vmin] z-50' style={{borderColor:`rgb(${theme})`, boxShadow:`0 0 2vmin 0.2vmin rgb(${theme})`}}>
       
       <h1 className='font-semibold text-[5vmin] sm:[4.5vmin] md:[4vmin]'>
-        <Link href='/'><span style={{color:theme}}>Aditya</span> Aryan</Link>
+        <Link href='/'><span style={{color:`rgb(${theme}`}}>Aditya</span> Aryan</Link>
       </h1>
 
       {

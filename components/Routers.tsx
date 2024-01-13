@@ -12,7 +12,6 @@ interface IProps {
 const navLinks = [
     {title:'ABOUT',link:'/about'},
     {title:'PORTFOLIO',link:'/portfolio'},
-    {title:'RESUME',link:'/resume'},
     {title:'CONTACT',link:'/contact'},
 ]
 

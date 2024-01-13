@@ -1,7 +1,7 @@
-
+import Home from "@/components/Home"
 
 function page() {
-  return <p>hello</p>
+  return <Home />
 }
 
 export default page

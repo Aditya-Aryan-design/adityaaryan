@@ -9,7 +9,7 @@ const MyMesh=({i,j}:{i:number,j:number})=>{
     useFrame(()=>{
         if(myMesh.current){
 
-            myMesh.current.rotation.x +=0.01
+            myMesh.current.rotation.x +=0.005
         }
 
     })
@@ -18,10 +18,10 @@ const MyMesh=({i,j}:{i:number,j:number})=>{
         <mesh
         ref={myMesh}
         position={[i,j,0]}
-        rotation={[i,j,j]}
+        rotation={[0,0,0]}
         scale={2}
         >
-            <cylinderGeometry args={[0.05,0.05,0.1]}/>
+            <cylinderGeometry args={[0.05,0.05,0.2,10]}/>
             <meshStandardMaterial />
         </mesh>
     )

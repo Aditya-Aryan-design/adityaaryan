@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import themeReducer from './slice/theme'
+import bgReducer from './slice/bgRemover'
 
 
 export const store = configureStore({
   reducer: {
-    theme:themeReducer
+    theme: themeReducer,
+    bg: bgReducer
   },
 })
 

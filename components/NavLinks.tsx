@@ -17,7 +17,7 @@ function NavLinks({title, link, active, setShowNav}
     <Link 
     onClick={()=>setShowNav(false)}
     
-    href={link} className='px-[3vmin] py-[2vmin] border-b-[0.2vmin] hover:bg-zinc-800' style={active?{color}:{color:'#777'}}>
+    href={link} className='px-[3vmin] py-[2vmin] border-b-[0.2vmin] hover:bg-zinc-800' style={active?{color:`rgb(${color})`}:{color:'#777'}}>
       {title}
     </Link>
   )

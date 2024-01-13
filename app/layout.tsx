@@ -3,6 +3,7 @@ import { Providers } from '@/redux/providers'
 import './globals.css'
 import { Header } from '@/components/Header'
 import BackGround from '@/components/BackGround'
+import RemoveBG from '@/components/RemoveBG'
 
 
 
@@ -21,9 +22,10 @@ export default function RootLayout({
       <Providers>
         <body className='bg-zinc-950 h-screen text-white overflow-hidden flex flex-col'>
           <Header />
-          <div className="flex-1">
+          <div className="flex-1 h-full">
             <BackGround />
             {children}
+            <RemoveBG />
           </div>
         </body>
       </Providers>

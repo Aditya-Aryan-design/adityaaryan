@@ -10,7 +10,7 @@ interface themeState {
 }
 
 const initialState: themeState = {
-  value: '#fff',
+  value: '255,255,255',
 }
 
 export const themeSlice = createSlice({
