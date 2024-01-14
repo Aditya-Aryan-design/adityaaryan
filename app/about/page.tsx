@@ -5,7 +5,7 @@ const page = () => {
   
   return (
     <div
-      className='flex flex-wrap px-[2vmin] py-[2vmin] space-y-[2vmin] justify-around h-[85vh] overflow-auto md:h-[80vh]'
+      className='flex flex-wrap px-[2vmin] py-[2vmin] space-y-[2vmin] justify-around h-[85vh] overflow-auto md:h-[80vh] select-none'
     >
       {
         AboutData.map((e, i) => {

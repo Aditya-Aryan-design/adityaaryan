@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 const Home = () => {
     const color= useAppSelector(state=>state.theme.value)
   return (
-    <div className='flex py-[5vh] px-[5vw]'>
+    <div className='flex py-[5vh] px-[5vw] select-none'>
         <div className='h-[40vh] w-full border-l-2 pl-[2vmin] overflow-hidden' style={{borderColor: `rgb(${color})`}}>
 
         <motion.div
